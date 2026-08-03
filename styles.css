@@ -1,0 +1,273 @@
+:root {
+  color-scheme: light;
+  --deep-navy: #06111d;
+  --gold: #d9a646;
+  --champagne: #f4e0b3;
+  --cobalt: #0b3159;
+  --off-white: #f7f7f4;
+  --white: #ffffff;
+  --page-gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --content-width: 90rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 20rem;
+  background: var(--deep-navy);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--off-white);
+  color: var(--deep-navy);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: var(--page-gutter);
+  padding: 0.75rem 1rem;
+  transform: translateY(-120%);
+  background: var(--gold);
+  color: var(--deep-navy);
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 0.2rem solid var(--deep-navy);
+  outline-offset: 0.15rem;
+}
+
+.site-header,
+.site-footer,
+.hero {
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+.site-header {
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border-bottom: 1px solid var(--champagne);
+}
+
+.brand {
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brand:focus-visible {
+  outline: 0.2rem solid var(--cobalt);
+  outline-offset: 0.35rem;
+}
+
+.site-status {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--cobalt);
+  font-size: 0.875rem;
+}
+
+.site-status span {
+  width: 0.55rem;
+  height: 0.55rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 0.25rem var(--champagne);
+}
+
+main {
+  display: grid;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(17rem, 0.75fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: end;
+  padding-block: clamp(5rem, 13vh, 10rem);
+}
+
+.hero-copy {
+  max-width: 65rem;
+}
+
+.eyebrow {
+  margin: 0 0 1.5rem;
+  color: var(--cobalt);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 20ch;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2.65rem, 5.7vw, 6.4rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.intro {
+  max-width: 40rem;
+  margin: clamp(2rem, 4vw, 3.5rem) 0 0;
+  padding-left: 1.25rem;
+  border-left: 0.25rem solid var(--gold);
+  color: var(--cobalt);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+
+.signal {
+  position: relative;
+  padding: 1.75rem;
+  background: var(--deep-navy);
+  color: var(--off-white);
+}
+
+.signal::before {
+  content: "";
+  position: absolute;
+  width: 3.5rem;
+  height: 0.35rem;
+  top: 0;
+  left: 1.75rem;
+  background: var(--gold);
+}
+
+.signal-label {
+  margin: 0 0 1.5rem;
+  color: var(--champagne);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.signal ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.signal li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.75rem;
+  padding-block: 1rem;
+  border-top: 1px solid var(--cobalt);
+}
+
+.signal li:last-child {
+  padding-bottom: 0;
+}
+
+.signal li span {
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.site-footer {
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--deep-navy);
+  color: var(--off-white);
+  font-size: 0.8125rem;
+}
+
+.site-footer::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5rem;
+  background: var(--deep-navy);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 52rem) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding-block: clamp(4rem, 10vh, 6rem);
+  }
+
+  .signal {
+    max-width: 32rem;
+  }
+}
+
+@media (max-width: 34rem) {
+  .site-header {
+    min-height: 5.25rem;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 12vw, 3.65rem);
+  }
+
+  .site-footer {
+    min-height: 6.5rem;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  .site-footer::before {
+    height: 6.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .skip-link {
+    transition: transform 150ms ease-out;
+  }
+}
+
+@media (forced-colors: active) {
+  .site-status span,
+  .signal::before {
+    forced-color-adjust: none;
+    background: CanvasText;
+  }
+}
