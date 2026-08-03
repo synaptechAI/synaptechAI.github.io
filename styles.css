@@ -197,6 +197,7 @@ h1 {
 .site-footer {
   min-height: 5rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -218,6 +219,21 @@ h1 {
 
 .site-footer p {
   margin: 0;
+}
+
+.social-links a {
+  color: var(--champagne);
+  font-weight: 700;
+  text-underline-offset: 0.25rem;
+}
+
+.social-links a:hover {
+  color: var(--white);
+}
+
+.social-links a:focus-visible {
+  outline: 0.2rem solid var(--gold);
+  outline-offset: 0.3rem;
 }
 
 @media (max-width: 52rem) {
@@ -246,7 +262,7 @@ h1 {
   }
 
   .site-footer {
-    min-height: 6.5rem;
+    min-height: 8rem;
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
@@ -254,7 +270,7 @@ h1 {
   }
 
   .site-footer::before {
-    height: 6.5rem;
+    height: 8rem;
   }
 }
 
